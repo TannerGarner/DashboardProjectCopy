@@ -1,0 +1,75 @@
+@use "colors";
+@use "fonts";
+@use "boxes";
+
+
+div.sideNav {
+    @include boxes.box($background: colors.$gray1, $padding: 25px);
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 4rem;
+    
+    img{
+        width: 100px;
+    }
+
+    ul.nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-grow: 2;
+    }
+
+    a {
+        text-decoration: none;
+        color: colors.$gray4;
+        transition: 0.25s;
+    }
+
+    a.currentPage, a:hover {color: colors.$black;}
+
+    ul i {margin-right: 15px;}
+
+    li {
+        font-size: fonts.$smallText;
+        display: flex;
+        font-weight: 400;
+        list-style-type: none;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            @include boxes.button($background: colors.$gray3, $padding: 2px 5px);
+        }
+    }
+
+    div.upgrade {
+        @include boxes.box($padding: 20px 10px, $margin: 0px);
+        background: linear-gradient(0deg, #00000000 0%, colors.$white 70%, colors.$white 100%);
+        text-align: center;
+        flex-grow: 1;
+        position: relative;
+        top: 100px;
+    
+        p {
+            color: colors.$purple;
+            padding: 0 10px;
+            margin: -10px 0 15px 0;
+        }
+        button {
+            @include boxes.button();
+            width: 100%;
+        }
+    }
+    
+    ul.misc {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex-grow: 1;
+        justify-content: flex-end;
+    }
+
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/64444e88c9.js" crossorigin="anonymous"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sideNav">
+            <img src="images/logo.png" alt="Logip-logo">
+            <ul class="nav">
+                <li><a href="" class="currentPage"><i class="fa-solid fa-home"></i>Home</a></li>
+                <li>
+                    <a href=""><i class="fa-solid fa-border-all"></i>Projects</a>
+                    <button>+</button>
+                </li>
+                <li>
+                    <a href=""><i class="fa-solid fa-list-check"></i>Tasks</a>
+                    <button>+</button>
+                </li>
+                <li><a href=""><i class="fa-solid fa-sitemap"></i>Team</a></li>
+                <li><a href=""><i class="fa-solid fa-gear"></i>Settings</a></li>
+            </ul>
+            <div class="upgrade">
+                <h2>Upgrade to Pro</h2>
+                <img src="" alt="">
+                <p>Get 1 month free and unlock all Pro features</p>
+                <button>Upgrade</button>
+            </div>
+            <ul class="misc">
+                <li><a href="#"><i class="fa-solid fa-circle-info"></i>Help & information</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle-minus"></i>Log out</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="topBar">
+                <div class="left">
+                    <div class="accountInfo">
+                        <img class="profilePic1" src="./images/profile-pic.png" alt="profile-picture">
+                        <div>
+                            <h5>Margaret Fletcher</h5>
+                            <p>Project manager</p>
+                        </div>
+                    </div>
+                    <button class="calendar"><i class="fa-solid fa-calendar"></i> 27 Feb</button>
+                </div>
+                <div class="right">
+                    <input type="search" class="search" placeholder="Search">
+                    <button class="notifications"><i class="fa-solid fa-bell"></i></button>
+                    <button class="messages"><i class="fa-solid fa-comment-dots"></i></button>
+                </div>
+            </div>
+            <div class="main">
+                <div class="chat">
+                    <div class="activeProfile">
+                        <img src="./images/chat-profile-pic.png" alt="megan-norton-profile-picture">
+                        <h5>Megan Norton</h5>
+                        <p>@megnortan</p>
+                        <div class="callOptions">
+                            <button><i class="fa-solid fa-phone"></i></button>
+                            <button><i class="fa-solid fa-video"></i></button>
+                            <button><i class="fa-solid fa-ellipsis-vertical ellipsis"></i></button>
+                        </div>
+                    </div>
+                    <div class="chatText">
+                        <h4>Today</h4>
+                        <div class="textBubble text1">
+                            <p>Hi! Next week we'll start a new project. I'll tell you all the details later</p>
+                        </div>
+                        <div class="textBubble text2">
+                            <button><img src="images/playButton.png" alt="playButton"></button>
+                            <div class="audioFileImg"></div>
+                            <div class="time">00:35</div>
+                        </div>
+                        <div class="textBubble text3">
+                            <p>Here is the link to tomorrow's meeting, check it please</p>
+                        </div>
+                        <div class="textBubble text4">
+                            <button class="googleMeetLink"><img src="images/googleMeetLogo.png" alt="google-meet-logo"></button>
+                            <div>
+                                <div>Project onboarding</div>
+                                <div>meet.google.com/project</div>
+                            </div>
+                        </div>
+                        <div class="writeMessage">
+                            <button class="textIcon">
+                                <i class="fa-solid fa-paperclip"></i>
+                            </button>
+                            <input type="text" placeholder="Write a message">
+                            <button class="textIcon">
+                                <i class="fa-solid fa-smile"></i>
+                            </button>
+                            <button class="textIcon">
+                                <i class="fa-solid fa-microphone"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightColumn">
+                    <div class="team">
+                        <div class="teamTitle">
+                            <h2>Team</h2>
+                            <button><i class="fa-solid fa-user"></i> 63</button>
+                        </div>
+                        <div class="teamMember">
+                            <img src="images/bluePersonIcon.png" alt="teamProfilePicture">
+                            <div class="memberName">
+                                <h5>Billy Parker</h5>
+                                <p>Project manager</p>
+                            </div>
+                            <button class="messageButton">
+                                <i class="fa-solid fa-envelope"></i>
+                            </button>
+                        </div>
+                        <div class="teamMember">
+                            <img src="images/bluePersonIcon.png" alt="teamProfilePicture">
+                            <div class="memberName">
+                                <h5>Nancy Salmon</h5>
+                                <p>Sales manager</p>
+                            </div>
+                            <button class="messageButton">
+                                <i class="fa-solid fa-envelope"></i>
+                            </button>
+                        </div>
+                        <div class="teamMember">
+                            <img src="images/bluePersonIcon.png" alt="teamProfilePicture">
+                            <div class="memberName">
+                                <h5>Stell Maxwell</h5>
+                                <p>UX/UI designer</p>
+                            </div>
+                            <button class="messageButton">
+                                <i class="fa-solid fa-envelope"></i>
+                            </button>
+                        </div>
+                        <div class="invite">
+                            <button class="inviteButton">
+                                <i class="fa-solid fa-add"></i>
+                            </button>
+                            <h5>Invite new team member</h5>
+                        </div>
+                    </div>
+                    <div class="agenda">
+                        <div class="projectTitle">
+                            <p>Meeting</p>
+                            <h2>Project onboarding</h2>
+                            <p>Add description of your meeting</p>
+                        </div>
+                        <div class="eventInfo">
+                            <i class="fa-solid fa-clock"></i>
+                            <div>11:00 &#xff0d; 12:30</div>
+                            <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        </div>
+                        <div class="eventInfo">
+                            <i class="fa-solid fa-calendar"></i>
+                            <div>Monday, 20 February</div>
+                            <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        </div>
+                        <div class="attendees">
+                            <div>
+                                <h5>Attendees</h5>
+                                <img src="images/bluePersonIcon.png" alt="attendee-profiles">
+                                <img src="images/bluePersonIcon.png">
+                                <img src="images/bluePersonIcon.png">
+                                <img src="images/bluePersonIcon.png">
+                                <img src="images/bluePersonIcon.png">
+                                <img src="images/plus2IconBorder.png">
+                            </div>
+                            <div>
+                                <h5>Send invitation link</h5>
+                                <button><i class="fa-solid fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

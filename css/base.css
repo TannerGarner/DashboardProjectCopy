@@ -1,0 +1,404 @@
+div.sideNav {
+  border-radius: 15px;
+  background: #ebebeb;
+  padding: 25px;
+  margin: 12px;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 4rem;
+}
+div.sideNav img {
+  width: 100px;
+}
+div.sideNav ul.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 2;
+}
+div.sideNav a {
+  text-decoration: none;
+  color: #7d7d7d;
+  transition: 0.25s;
+}
+div.sideNav a.currentPage, div.sideNav a:hover {
+  color: #2e2e2e;
+}
+div.sideNav ul i {
+  margin-right: 15px;
+}
+div.sideNav li {
+  font-size: 13px;
+  display: flex;
+  font-weight: 400;
+  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+}
+div.sideNav li button {
+  background: #d6d6d6;
+  padding: 2px 5px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+div.sideNav div.upgrade {
+  border-radius: 15px;
+  background: #fff;
+  padding: 20px 10px;
+  margin: 0px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #fff 70%, #fff 100%);
+  text-align: center;
+  flex-grow: 1;
+  position: relative;
+  top: 100px;
+}
+div.sideNav div.upgrade p {
+  color: #380d83;
+  padding: 0 10px;
+  margin: -10px 0 15px 0;
+}
+div.sideNav div.upgrade button {
+  background: #a3d6ff;
+  padding: 10px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.25s;
+  width: 100%;
+}
+div.sideNav ul.misc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.topBar button {
+  background: #ebebeb;
+  padding: 10px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.left {
+  display: flex;
+}
+.left .accountInfo {
+  display: flex;
+  border-right: 1px solid #d6d6d6;
+  padding-right: 15px;
+}
+.left .accountInfo .profilePic1 {
+  height: 40px;
+  padding-right: 10px;
+}
+.left .calendar {
+  margin-left: 15px;
+}
+
+.right {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.right .search {
+  border: none;
+  background-color: #ebebeb;
+  border-radius: 40px;
+  padding: 0px 20px;
+}
+.right .notifications, .right .messages {
+  padding: 0px 15px;
+}
+
+div.chat button {
+  background: #ebebeb;
+  padding: 10px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+div.chat {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+div.activeProfile {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  flex-grow: 2;
+}
+div.activeProfile img {
+  height: 100px;
+}
+div.activeProfile .callOptions {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+div.activeProfile .callOptions .ellipsis {
+  padding: 0px 5px;
+}
+
+div.chatText {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+div.chatText h4 {
+  align-self: center;
+}
+div.chatText div.textBubble {
+  background: #cfe9ff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px 10px 3px 10px;
+  width: 70%;
+}
+div.chatText div.text1, div.chatText div.text3, div.chatText div.text4 {
+  align-self: flex-end;
+}
+div.chatText div.writeMessage {
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  background-color: #ebebeb;
+  padding: 5px;
+  border-radius: 10px;
+}
+div.chatText div.writeMessage input {
+  border: none;
+  background-color: inherit;
+  padding: 0px 5px;
+  width: 170px;
+}
+
+div.chatText div.textBubble.text2 {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  background-color: #ebebeb;
+  border-radius: 10px 10px 10px 3px;
+}
+div.chatText div.textBubble.text2 button {
+  background: #a3d6ff;
+}
+div.chatText div.textBubble.text2 button img:first-child {
+  height: 15px;
+}
+div.chatText div.textBubble.text2 div.audioFileImg {
+  background: #ebebeb url(../images/audioFileImg.png);
+  background-size: cover;
+  flex-grow: 1;
+  height: 50px;
+  border-radius: 5px;
+  margin: 10px;
+}
+div.chatText div.textBubble.text2 div.time {
+  color: #7d7d7d;
+  font-size: 11px;
+}
+
+div.text4 {
+  display: flex;
+  align-items: center;
+}
+div.text4 button.googleMeetLink {
+  background: #fff;
+}
+div.text4 button.googleMeetLink img {
+  height: 20px;
+}
+div.text4 div {
+  margin-left: 5px;
+}
+div.text4 div :first-child {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+div.text4 div :last-child {
+  color: #7d7d7d;
+  font-size: 11px;
+}
+
+div.teamTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div.teamTitle button {
+  color: #2020a0;
+}
+
+div.teamMember, div.invite {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  cursor: pointer;
+}
+div.teamMember > :nth-child(2), div.invite > :nth-child(2) {
+  flex-grow: 1;
+  padding-left: 10px;
+}
+div.teamMember img, div.invite img {
+  height: 30px;
+}
+div.teamMember h5 + p, div.invite h5 + p {
+  color: #7d7d7d;
+}
+
+div.teamMember button, div.teamTitle button {
+  background: #ebebeb;
+}
+
+div.invite {
+  margin: 20px 0 -10px 0;
+  border-top: 1px solid #d6d6d6;
+  padding-top: 15px;
+}
+div.invite h5 {
+  padding-left: 20px;
+}
+
+div.projectTitle {
+  margin-bottom: 20px;
+}
+div.projectTitle h2 {
+  margin: 17px 0 8px 0;
+}
+div.projectTitle :first-child {
+  text-transform: uppercase;
+}
+
+div.eventInfo {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background: #ebebeb;
+  padding: 8px 8px 8px 15px;
+  margin-bottom: 12px;
+}
+div.eventInfo > :nth-child(2) {
+  flex-grow: 1;
+  padding-left: 10px;
+}
+div.eventInfo div {
+  font-size: 13px;
+}
+div.eventInfo button {
+  background: #ebebeb;
+}
+
+div.attendees {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div.attendees div:first-child h5 {
+  padding-bottom: 10px;
+}
+div.attendees div:first-child img {
+  height: 24px;
+  margin-right: -13px;
+}
+
+div.attendees div:nth-child(2) {
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+div.attendees div:nth-child(2) button {
+  padding: 8px 10px 8px 8px;
+}
+
+* {
+  font-family: Inter;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #d6d6d6;
+  margin: 30px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 13px;
+  color: #7d7d7d;
+}
+
+div.container {
+  display: flex;
+  justify-content: center;
+}
+
+div.chat {
+  border-radius: 15px;
+  background: #fff;
+  padding: 20px;
+  margin: 12px;
+}
+
+div.team, div.agenda {
+  border-radius: 15px;
+  background: #fff;
+  padding: 30px;
+  margin: 12px;
+}
+
+div.topBar {
+  border-radius: 15px;
+  background: #fff;
+  padding: 15px;
+  margin: 12px;
+}
+
+div.rightColumn {
+  width: 50%;
+}
+
+div.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: #a3d6ff;
+  padding: 10px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover {
+  filter: brightness(1.04);
+}/*# sourceMappingURL=base.css.map */

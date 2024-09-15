@@ -1,0 +1,33 @@
+@use "colors";
+@use "fonts";
+@use "boxes";
+
+
+div.teamTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    button {color: colors.$darkBlue;}
+}
+
+div.teamMember, div.invite {
+    @include boxes.iconTextIcon;
+    margin: 20px 0;
+    cursor: pointer;
+
+    img {height: 30px;}
+    h5 + p {color: colors.$gray4;}
+}
+
+div.teamMember, div.teamTitle {
+    button {background: colors.$gray1;}
+}
+
+div.invite {
+    margin: 20px 0 -10px 0;
+    border-top: 1px solid colors.$gray3;
+    padding-top: 15px;
+
+    h5 {padding-left: 20px;}
+}

@@ -1,0 +1,47 @@
+@use "colors";
+@use "fonts";
+@use "boxes";
+@use "sideNav";
+@use "topBar";
+@use "chat";
+@use "team";
+@use "agenda";
+
+* {
+    font-family: Inter;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: colors.$gray3;
+    margin: 30px;
+}
+
+h2 {font-size: 18px;}
+
+p {
+    font-size: fonts.$smallText;
+    color: colors.$gray4;
+}
+
+div.container {
+    display: flex;
+    justify-content: center;
+}
+
+div.chat {@include boxes.box($padding: 20px);}
+
+div.team, div.agenda {@include boxes.box($padding: 30px);}
+
+div.topBar {@include boxes.box($padding: 15px);}
+
+div.rightColumn {width: 50%;}
+
+div.main {
+    display: flex;
+    justify-content: space-between
+}
+
+button {@include boxes.button;}
+button:hover {filter: brightness(1.04);}
