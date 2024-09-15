@@ -2,9 +2,34 @@
 @use "boxes";
 @use 'fonts';
 
+%smallScreenFont {
+    @media screen and (max-width: 780px) {
+        font-size: fonts.$smallerText;
+    }
+}
+
 .topBar{
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+
+    @media screen and (max-width: 780px) {
+        width: boxes.$smallScreenWidth;
+        flex-direction: column;
+    }
+    @media screen and (min-width: 781px) {
+        justify-content: space-between;
+    }
+}
+
+button.hamburgerMenu{
+    @include boxes.blankButton;
+    
+    font-size: 35px;
+    margin-right: 15px;
+
+    @media screen and (min-width: 1041px) {
+        display: none;
+    }
 }
 
 div.topBar button{
@@ -13,6 +38,12 @@ div.topBar button{
 
 .left{
     display: flex;
+    height: 40px;
+
+    @media screen and (max-width: 780px) {
+        justify-content: space-between;
+    }
+
     .accountInfo{
         display: flex;
         border-right: 1px solid colors.$gray3;
@@ -22,10 +53,15 @@ div.topBar button{
             height: 40px;
             padding-right: 10px;
         }
+        > :last-child *{
+            @extend %smallScreenFont;
+        }
     }
     
     .calendar{
         margin-left: 15px;
+
+        @extend %smallScreenFont;
     }
 }
 
@@ -33,6 +69,8 @@ div.topBar button{
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    height: 40px;
+    
 
     .search{
         border: none;

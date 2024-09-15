@@ -1,3 +1,19 @@
+/*
+@mixin breakPoint($breakPoint, $upperOrLower) {
+    @if $breakPoint == 1 {
+        @if $upperOrLower == lower {min-width: 0;}
+        @else if $upperOrLower == upper {max-width: 780px;}
+    }
+    @else if $breakPoint == 2 {
+        @if $upperOrLower == lower {min-width: 781px;}
+        @else if $upperOrLower == upper {max-width: 1040px;}
+    }
+    @else if $breakPoint == 3 {
+        @if $upperOrLower == lower {min-width: 1041px;}
+        @else if $upperOrLower == upper {max-width: 100000000000000px;}
+    }
+}
+*/
 div.sideNav {
   border-radius: 15px;
   background: #ebebeb;
@@ -8,6 +24,26 @@ div.sideNav {
   flex-direction: column;
   justify-content: space-around;
   gap: 4rem;
+}
+div.sideNav > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+div.sideNav > div:first-child button {
+  background: rgba(0, 0, 0, 0) !important;
+  padding: 0 !important;
+  margin: -8px -8px 0 0;
+  font-size: 20px;
+  transition: font-weight 0.25s;
+}
+div.sideNav > div:first-child button:hover {
+  font-weight: bold;
+}
+@media screen and (min-width: 1041px) {
+  div.sideNav > div:first-child button {
+    display: none;
+  }
 }
 div.sideNav img {
   width: 100px;
@@ -43,7 +79,10 @@ div.sideNav li button {
   border: 0;
   border-radius: 50px;
   cursor: pointer;
-  transition: 0.25s;
+  transition: filter 0.25s;
+}
+div.sideNav li button:hover {
+  filter: brightness(1.04);
 }
 div.sideNav div.upgrade {
   border-radius: 15px;
@@ -59,7 +98,7 @@ div.sideNav div.upgrade {
 div.sideNav div.upgrade p {
   color: #380d83;
   padding: 0 10px;
-  margin: -10px 0 15px 0;
+  margin: 10px 0 15px 0;
 }
 div.sideNav div.upgrade button {
   background: #a3d6ff;
@@ -67,8 +106,11 @@ div.sideNav div.upgrade button {
   border: 0;
   border-radius: 50px;
   cursor: pointer;
-  transition: 0.25s;
+  transition: filter 0.25s;
   width: 100%;
+}
+div.sideNav div.upgrade button:hover {
+  filter: brightness(1.04);
 }
 div.sideNav ul.misc {
   display: flex;
@@ -77,10 +119,58 @@ div.sideNav ul.misc {
   flex-grow: 1;
   justify-content: flex-end;
 }
+@media screen and (max-width: 1040px) {
+  div.sideNav {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    width: calc(286px - 10vh);
+    height: 80vh;
+    max-height: 820px;
+  }
+  div.sideNav div.upgrade {
+    top: 8vh;
+  }
+}
+@media screen and (min-width: 1041px) {
+  div.sideNav {
+    display: flex !important;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .left .calendar, .left .accountInfo > :last-child * {
+    font-size: 11px;
+  }
+}
 
 .topBar {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
+}
+@media screen and (max-width: 780px) {
+  .topBar {
+    width: 296px;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 781px) {
+  .topBar {
+    justify-content: space-between;
+  }
+}
+
+button.hamburgerMenu {
+  background: rgba(0, 0, 0, 0) !important;
+  padding: 0 !important;
+  font-size: 35px;
+  margin-right: 15px;
+}
+@media screen and (min-width: 1041px) {
+  button.hamburgerMenu {
+    display: none;
+  }
 }
 
 div.topBar button {
@@ -89,11 +179,20 @@ div.topBar button {
   border: 0;
   border-radius: 50px;
   cursor: pointer;
-  transition: 0.25s;
+  transition: filter 0.25s;
+}
+div.topBar button:hover {
+  filter: brightness(1.04);
 }
 
 .left {
   display: flex;
+  height: 40px;
+}
+@media screen and (max-width: 780px) {
+  .left {
+    justify-content: space-between;
+  }
 }
 .left .accountInfo {
   display: flex;
@@ -112,6 +211,7 @@ div.topBar button {
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  height: 40px;
 }
 .right .search {
   border: none;
@@ -129,13 +229,15 @@ div.chat button {
   border: 0;
   border-radius: 50px;
   cursor: pointer;
-  transition: 0.25s;
+  transition: filter 0.25s;
+}
+div.chat button:hover {
+  filter: brightness(1.04);
 }
 
 div.chat {
   display: flex;
   flex-direction: column;
-  width: 40%;
 }
 
 div.activeProfile {
@@ -165,6 +267,11 @@ div.chatText {
   flex-direction: column;
   justify-content: space-between;
   margin-top: 30px;
+}
+@media screen and (max-width: 780px) {
+  div.chatText {
+    gap: 15px;
+  }
 }
 div.chatText h4 {
   align-self: center;
@@ -208,7 +315,7 @@ div.chatText div.textBubble.text2 button img:first-child {
   height: 15px;
 }
 div.chatText div.textBubble.text2 div.audioFileImg {
-  background: #ebebeb url(../images/audioFileImg.png);
+  background: #ebebeb url(../images/audioFileImg.png) center;
   background-size: cover;
   flex-grow: 1;
   height: 50px;
@@ -323,6 +430,11 @@ div.attendees div:first-child img {
   height: 24px;
   margin-right: -13px;
 }
+@media screen and (min-width: 781px) and (max-width: 1040px) {
+  div.attendees div:last-child h5 {
+    font-size: 11px;
+  }
+}
 
 div.attendees div:nth-child(2) {
   align-self: flex-end;
@@ -374,20 +486,66 @@ div.team, div.agenda {
   margin: 12px;
 }
 
-div.topBar {
-  border-radius: 15px;
-  background: #fff;
-  padding: 15px;
-  margin: 12px;
+div.agenda {
+  margin-top: 24px;
 }
 
-div.rightColumn {
-  width: 50%;
+@media screen and (max-width: 780px) {
+  div.topBar {
+    border-radius: 15px;
+    background: #fff;
+    padding: 15px 20px;
+    margin: 12px;
+  }
+  div.topBar .search {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 781px) {
+  div.topBar {
+    border-radius: 15px;
+    background: #fff;
+    padding: 15px;
+    margin: 12px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  div.chat {
+    width: 296px;
+  }
+}
+@media screen and (min-width: 781px) {
+  div.chat {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  div.rightColumn {
+    width: 360px;
+  }
+}
+@media screen and (min-width: 781px) {
+  div.rightColumn {
+    width: 50%;
+  }
 }
 
 div.main {
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 780px) {
+  div.main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 781px) {
+  div.main {
+    flex-direction: row;
+  }
 }
 
 button {
@@ -396,9 +554,8 @@ button {
   border: 0;
   border-radius: 50px;
   cursor: pointer;
-  transition: 0.25s;
+  transition: filter 0.25s;
 }
-
 button:hover {
   filter: brightness(1.04);
 }/*# sourceMappingURL=base.css.map */

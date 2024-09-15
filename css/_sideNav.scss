@@ -2,20 +2,35 @@
 @use "fonts";
 @use "boxes";
 
-
 div.sideNav {
     @include boxes.box($background: colors.$gray1, $padding: 25px);
+
     width: 15%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     gap: 4rem;
-    
-    img{
-        width: 100px;
-    }
 
-    ul.nav{
+    > div:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+
+        button {
+            @include boxes.blankButton;
+
+            margin: -8px -8px 0 0;
+            font-size: 20px;
+            transition: font-weight 0.25s;
+
+            &:hover {font-weight: bold;}
+
+            @media screen and (min-width: 1041px) {display: none;}
+        }
+    }
+    img {width: 100px;}
+
+    ul.nav {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -27,11 +42,9 @@ div.sideNav {
         color: colors.$gray4;
         transition: 0.25s;
     }
-
     a.currentPage, a:hover {color: colors.$black;}
 
     ul i {margin-right: 15px;}
-
     li {
         font-size: fonts.$smallText;
         display: flex;
@@ -40,13 +53,12 @@ div.sideNav {
         justify-content: space-between;
         align-items: center;
 
-        button {
-            @include boxes.button($background: colors.$gray3, $padding: 2px 5px);
-        }
+        button {@include boxes.button($background: colors.$gray3, $padding: 2px 5px);}
     }
 
     div.upgrade {
         @include boxes.box($padding: 20px 10px, $margin: 0px);
+
         background: linear-gradient(0deg, #00000000 0%, colors.$white 70%, colors.$white 100%);
         text-align: center;
         flex-grow: 1;
@@ -56,14 +68,13 @@ div.sideNav {
         p {
             color: colors.$purple;
             padding: 0 10px;
-            margin: -10px 0 15px 0;
+            margin: 10px 0 15px 0;
         }
         button {
             @include boxes.button();
             width: 100%;
         }
     }
-    
     ul.misc {
         display: flex;
         flex-direction: column;
@@ -71,5 +82,17 @@ div.sideNav {
         flex-grow: 1;
         justify-content: flex-end;
     }
+    
+    @media screen and (max-width: 1040px) {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        width: calc(boxes.$smallScreenWidth - 10px - 10vh);
+        height: 80vh;
+        max-height: 820px;
 
+        div.upgrade {top: 8vh;}
+    }
+    @media screen and (min-width: 1041px) {display: flex !important;}
 }
